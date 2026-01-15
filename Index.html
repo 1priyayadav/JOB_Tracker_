@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Internship Application Tracker</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Internship Application Tracker</h1>
+
+    <!-- Add / Edit Form -->
+    <form id="application-form">
+      <div>
+        <label for="company">Company</label>
+        <input type="text" id="company" required placeholder="e.g. Google" />
+      </div>
+      <div>
+        <label for="position">Position / Role</label>
+        <input type="text" id="position" required placeholder="e.g. Software Engineering Intern" />
+      </div>
+      <div>
+        <label for="deadline">Deadline</label>
+        <input type="date" id="deadline" />
+      </div>
+      <div>
+        <label for="link">Application Link (optional)</label>
+        <input type="url" id="link" placeholder="https://..." />
+      </div>
+      <div class="full-width">
+        <label>
+          <input type="checkbox" id="applied" />
+          I have already applied
+        </label>
+
+      </div>
+
+            <div class="full-width">
+        <label for="notes">Notes</label>
+        <textarea id="notes" rows="3" placeholder="Notes about this internship..."></textarea>
+      </div>
+      <div class="full-width">
+        <button type="submit" class="primary">Add Application</button>
+      </div>
+    </form>
+
+      <!-- Date chips (click a date to filter table) -->
+    <div class="date-bar">
+      <span class="date-bar-label">View by added date</span>
+      <div id="date-chip-container" class="date-chip-container"></div>
+    </div>
+
+    <!-- Filter / Summary -->
+    <div class="top-bar">
+      <div>
+        <strong>Summary:</strong>
+        <span id="summary-text">0 total, 0 applied, 0 not applied</span>
+      </div>
+      <div>
+        <label for="filter-status">Filter by status: </label>
+        <select id="filter-status">
+          <option value="all">All</option>
+          <option value="applied">Applied</option>
+          <option value="not-applied">Not Applied</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Company</th>
+          <th>Position</th>
+          <th>Deadline</th>
+          <th>Link</th>
+          <th>Notes</th>
+          <th>Status</th>
+          <th class="actions">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="applications-body">
+        <!-- rows will be added here by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+
+<script src="app.js"></script>
+
+  </body>
+</html>
